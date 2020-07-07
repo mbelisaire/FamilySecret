@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredients_label"
+            android:textSize="@dimen/text_large_size"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginLeft="@dimen/text_margin"/>
+        <include layout="@layout/recipe_ingredient_list" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recipe_steps_label"
+            android:textSize="@dimen/text_large_size"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginLeft="@dimen/text_margin"/>
+        <androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/item_list"
+            android:name="com.mbelisaire.familysecret.ItemListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".RecipeStepListActivity"
+            tools:listitem="@layout/step_list_content"/>
+    </LinearLayout>
+</ScrollView>
+

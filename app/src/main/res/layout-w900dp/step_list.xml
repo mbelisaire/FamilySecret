@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:baselineAligned="false"
+    android:divider="?android:attr/dividerHorizontal"
+    android:orientation="horizontal"
+    android:showDividers="middle"
+    tools:context=".RecipeStepListActivity">
+
+    <!--
+    This layout is a two-pane layout for the Items master/detail flow.
+    -->
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredients_label"
+                android:textSize="@dimen/text_medium_size"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="@dimen/text_margin"/>
+            <include layout="@layout/recipe_ingredient_list" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recipe_steps_label"
+                android:textSize="@dimen/text_medium_size"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/text_margin"
+                android:layout_marginBottom="@dimen/text_margin"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/item_list"
+                android:name="com.mbelisaire.familysecret.ItemListFragment"
+                android:layout_width="@dimen/item_width"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:layoutManager="LinearLayoutManager"
+                tools:context="com.mbelisaire.familysecret.RecipeStepListActivity"
+                tools:listitem="@layout/step_list_content"/>
+        </LinearLayout>
+    </ScrollView>
+    <FrameLayout
+        android:id="@+id/item_detail_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3" />
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Family Secret</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="background">background</string>
+    <string name="person_icon">person_icon</string>
+    <string name="ingredients_label">Ingredients</string>
+    <string name="recipe_steps_label">Recipe Steps</string>
+</resources>
